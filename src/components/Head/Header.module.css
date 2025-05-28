@@ -1,0 +1,231 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 15px clamp(20px, 5vw, 60px);
+  background-color: #f8f9fa;
+  box-sizing: border-box;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: 700;
+
+  cursor: pointer;
+  color: #212529;
+  text-decoration: none;
+
+  flex-shrink: 0;
+}
+
+.nav {
+  display: flex;
+  gap: clamp(30px, 4vw, 50px);
+
+}
+
+.nav a {
+  color: #6c757d;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav a:hover,
+.nav a.activeLink {
+  color: #0d6efd;
+}
+
+.authControls {
+
+  flex-shrink: 0;
+}
+
+.authButton {
+  padding: 8px 20px;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+.authButton:hover {
+  background-color: #0b5ed7;
+}
+
+.profileSidebarTriggerContainer {
+  position: relative;
+}
+
+.profileSidebarTriggerButton {
+  background-color: transparent;
+  border: 1px solid #ced4da;
+  color: #495057;
+  padding: 7px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profileSidebarTriggerButton:hover {
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.profileSidebarTriggerButtonActive {
+  background-color: #dee2e6;
+  border-color: #6c757d;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.headerMenuTriggerIcon {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+}
+
+.authButtonPlaceholder {
+  width: 90px;
+  height: 38px;
+  background-color: #e9ecef;
+  border-radius: 6px;
+}
+.hamburgerPlaceholder {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background-color: #e9ecef;
+  border-radius: 6px;
+  margin-left: 10px;
+}
+
+.hamburgerButton {
+  display: none;
+  padding: 8px;
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  z-index: 1005;
+  position: relative;
+}
+.hamburgerButton:hover {
+  background-color: #e9ecef;
+}
+.hamburgerBox {
+  width: 24px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+}
+.hamburgerInner, .hamburgerInner::before, .hamburgerInner::after {
+  width: 24px;
+  height: 2.5px;
+  background-color: #495057;
+  border-radius: 3px;
+  position: absolute;
+  transition-property: transform, background-color;
+  transition-duration: .15s;
+  transition-timing-function: ease;
+}
+.hamburgerButtonActive .hamburgerInner,
+.hamburgerButtonActive .hamburgerInner::before,
+.hamburgerButtonActive .hamburgerInner::after {
+  background-color: #0d6efd;
+}
+.hamburgerInner { display: block; top: 50%; margin-top: -1.25px; }
+.hamburgerInner::before, .hamburgerInner::after { content: ""; display: block; }
+.hamburgerInner::before { top: -8px; }
+.hamburgerInner::after { bottom: -8px; }
+
+.hamburgerButtonActive .hamburgerInner { transform: rotate(45deg); }
+.hamburgerButtonActive .hamburgerInner::before { top: 0; transform: rotate(-90deg); }
+.hamburgerButtonActive .hamburgerInner::after { bottom: 0; transform: rotate(-90deg); }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1010;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.overlay.overlayActive { opacity: 1; visibility: visible; }
+
+.mobileNavMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  max-width: 80vw;
+  height: 100vh;
+  background-color: #ffffff;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 1020;
+  padding: 70px 20px 20px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  overflow-y: auto;
+}
+.mobileNavMenu.mobileNavMenuActive { transform: translateX(0); visibility: visible; }
+
+.mobileNavLinks { display: flex; flex-direction: column; gap: 15px; width: 100%; margin-bottom: 25px; }
+.mobileNavLinks a {
+  color: #343a40;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-weight: 500;
+}
+.mobileNavLinks a:hover, .mobileNavLinks a:focus { color: #0d6efd; background-color: #e9ecef; }
+
+.mobileAuthControls { width: 100%; display: flex; flex-direction: column; gap: 10px; margin-top: auto; padding-top: 15px; }
+.mobileAuthControls .authButton { width: 100%; }
+.profileButtonMobile { background-color: #f63b3b; }
+.profileButtonMobile:hover { background-color: #5a6268; }
+
+@media (max-width: 768px) {
+  .desktopNav, .desktopAuthControls { display: none; }
+  .hamburgerButton { display: inline-flex; }
+  .hamburgerPlaceholder { display: block; }
+  .logo { font-size: 1.6em; }
+}
+
+@media (max-width: 480px) {
+  .header { padding: 10px 15px; }
+  .logo { font-size: 1.5em; }
+  .mobileNavMenu { width: calc(100% - 50px); max-width: 300px; }
+  .hamburgerBox { width: 22px; height: 18px; }
+  .hamburgerInner, .hamburgerInner::before, .hamburgerInner::after { width: 22px; height: 2px; }
+  .hamburgerInner::before { top: -7px; }
+  .hamburgerInner::after { bottom: -7px; }
+}

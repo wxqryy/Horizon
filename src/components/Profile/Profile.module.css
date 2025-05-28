@@ -1,0 +1,43 @@
+.pageWrapper {
+  background-color: #f3f4f6; 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainArea {
+  flex-grow: 1;
+  padding-top: 24px; 
+  padding-bottom: 48px; 
+}
+
+.contentLayout {
+  display: flex;
+  gap: 24px; 
+  max-width: 1280px; 
+  margin: 0 auto; 
+  padding: 0 24px; 
+}
+
+@media (max-width: 1024px) { 
+  .contentLayout {
+    flex-direction: column; 
+    align-items: center; 
+  }
+  .myPathSidebarContainer {
+    width: 100%; 
+    max-width: 600px; 
+
+  }
+}
+
+@media (max-width: 768px) {
+  .mainArea {
+    padding-top: 16px;
+    padding-bottom: 32px;
+  }
+  .contentLayout {
+    padding: 0 16px;
+    gap: 16px;
+  }
+}

@@ -1,0 +1,179 @@
+.faqPageSection {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-family: 'Inter', sans-serif; 
+}
+@media (min-width: 768px) { 
+  .faqPageSection {
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+  }
+}
+
+.faqContainer {
+  max-width: 72rem; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sectionTitleFaq {
+  font-size: 1.875rem; 
+  line-height: 1.3;    
+  font-weight: 700; 
+  font-family: 'Unbounded', sans-serif;
+  color: #1f2937; 
+  margin-bottom: 2rem; 
+  text-align: center;
+}
+@media (min-width: 640px) { 
+  .sectionTitleFaq {
+    font-size: 2.5rem;    
+    line-height: 1.25;
+    margin-bottom: 2.5rem;
+  }
+}
+@media (min-width: 768px) { 
+  .sectionTitleFaq {
+    font-size: 3.25rem;   
+    line-height: 1.2;
+    margin-bottom: 3.5rem;
+  }
+}
+@media (min-width: 1024px) { 
+  .sectionTitleFaq {
+    font-size: 3.75rem; 
+  }
+}
+
+.accordionListContainerFaq {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; 
+}
+
+.accordionItemBaseFaq {
+  border-radius: 0.75rem; 
+  border-width: 2px;
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out, box-shadow 0.2s ease-out;
+  cursor: pointer;
+}
+
+.collapsedStateFaq {
+  background-color: #ffffff;
+  border-color: #a2a3a7; 
+}
+.collapsedStateFaq:hover {
+  border-color: #606164; 
+}
+.collapsedStateFaq .accordionTitleFaq { 
+  color: #1f2937; 
+}
+
+.expandedStateFaq {
+  background-color: #ffffff; 
+  border-color: #3b82f6; 
+  border-width: 3px;
+}
+.expandedStateFaq .accordionTitleFaq, 
+.accordionTitleExpandedFaq { 
+  color: #3b82f6 !important; 
+}
+
+.accordionHeaderFaq {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem; 
+  min-height: 4.5rem; 
+}
+
+.accordionTitleFaq {
+  flex-grow: 1;
+  font-size: 1rem;    
+  font-weight: 600;   
+  line-height: 1.4;   
+  transition: color 0.2s ease-out;
+  margin-right: 0.5rem; 
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+@media (min-width: 640px) { 
+  .accordionTitleFaq {
+    font-size: 1.25rem; 
+    line-height: 1.5;
+  }
+}
+@media (min-width: 768px) { 
+  .accordionTitleFaq {
+    font-size: 1.5rem; 
+  }
+}
+
+.accordionIconWrapperFaq {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordionIconFaq {
+  width: 1.5rem;  
+  height: 1.5rem; 
+}
+@media (min-width: 640px) { 
+  .accordionIconFaq {
+    width: 1.875rem; 
+    height: 1.875rem;
+  }
+}
+@media (min-width: 768px) { 
+  .accordionIconFaq {
+    width: 2.25rem; 
+    height: 2.25rem;
+  }
+}
+
+.accordionContentWrapperFaq {
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordionContentFaq {
+  padding: 0.25rem 1.5rem 1.25rem 1.5rem; 
+  color: #4b5563; 
+}
+
+.accordionContentFaq p,
+.accordionContentFaq span,
+.accordionContentFaq div  {
+  font-size: 0.8rem;    
+  line-height: 1.6;     
+  font-weight: 500; 
+}
+@media (min-width: 640px) { 
+  .accordionContentFaq p,
+  .accordionContentFaq span,
+  .accordionContentFaq div {
+    font-size: 0.875rem; 
+    line-height: 1.65;
+  }
+}
+@media (min-width: 768px) { 
+  .accordionContentFaq p,
+  .accordionContentFaq span,
+  .accordionContentFaq div {
+    font-size: 1rem;     
+  }
+}
+
+.faqLink {
+  font-weight: 600; 
+  color: #3b82f6; 
+  text-decoration: none;
+}
+.faqLink:hover {
+  text-decoration: underline;
+}

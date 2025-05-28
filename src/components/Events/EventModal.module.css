@@ -1,0 +1,248 @@
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.modalContent {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 700px;
+    max-height: 90vh; 
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden; 
+}
+
+.closeButton {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0,0,0,0.3);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 22px;
+    line-height: 30px; 
+    text-align: center;
+    cursor: pointer;
+    z-index: 10; 
+    transition: background-color 0.2s ease;
+}
+.closeButton:hover {
+    background: rgba(0,0,0,0.5);
+}
+
+.modalImageContainer {
+    position: relative; 
+    width: 100%;
+    height: 300px; 
+
+    border-radius: 16px 16px 0 0; 
+    flex-shrink: 0; 
+}
+
+.imageOverlayModal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.75) 100%);
+    z-index: 1;
+    border-radius: 16px 16px 0 0; 
+}
+
+.eventNameOnImageModal {
+    position: absolute;
+    bottom: 55px;
+    left: 20px;
+    right: 60px; 
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+    z-index: 2;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+}
+
+.tagsOnImageModal {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tagOnImage {
+
+    color: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.eventBadgeModal {
+    position: absolute;
+    top: 20px;
+    right: 20px; 
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2; 
+}
+.eventBadgeOnlineModal {
+    background-color: rgba(74, 144, 226, 0.8);
+}
+.eventBadgeOfflineModal {
+    background-color: rgba(20, 20, 20, 0.75);
+}
+.eventBadgeHybridModal {
+    background-color: rgba(126, 211, 33, 0.8);
+    font-size: 11px;
+    padding: 6px 8px;
+}
+
+.modalInfo {
+    padding: 25px 30px 30px 30px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #333;
+    flex-grow: 1; 
+    overflow-y: auto; 
+    min-height: 0; 
+}
+
+.modalSectionTitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 0; 
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.modalSectionTitle:not(:first-child) { 
+     margin-top: 20px;
+}
+
+.descriptionTitle {
+    margin-top: 0; 
+    margin-bottom: 10px;
+}
+
+.modalDescriptionParagraph {
+    margin-top: 0;
+    margin-bottom: 1.2em;
+    color: #4f5660;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.modalDescriptionParagraph:last-of-type {
+    margin-bottom: 0; 
+}
+
+.modalSection {
+    margin-bottom: 25px;
+}
+.modalSection:last-of-type { 
+    margin-bottom: 0;
+}
+
+.modalText {
+    color: #4f5660;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.modalActionButton {
+    display: block;
+    width: auto;
+    min-width: 150px;
+    margin: 35px auto 10px auto; 
+    padding: 12px 30px;
+    background-color: #4A00E0;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    border: none;
+    cursor: pointer;
+}
+.modalActionButton:hover {
+    background-color: #3b00b3;
+}
+.modalActionButton:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+    .modalContent {
+
+    }
+    .modalImageContainer {
+        height: 220px; 
+    }
+    .eventNameOnImageModal {
+        font-size: 20px;
+        bottom: 45px;
+        left: 15px;
+        right: 15px; 
+    }
+    .tagsOnImageModal {
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+    }
+    .tagOnImage {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+    .modalInfo {
+        padding: 20px;
+    }
+    .modalSectionTitle {
+        font-size: 13px;
+    }
+    .modalDescriptionParagraph, .modalText {
+        font-size: 13px;
+    }
+    .modalActionButton {
+        font-size: 15px;
+        padding: 10px 20px;
+        margin-top: 25px;
+    }
+}

@@ -1,0 +1,168 @@
+/* app/events/EventCard.module.css */
+.eventCard {
+    background-color: #f0f2f5;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07), 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid #b5b7bb5d;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    
+    /* Увеличиваем максимальную высоту карточки еще на 50px */
+    max-height: 450px; /* Было 450px, стало 450 + 50 = 500px */
+}
+.eventCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0,0,0,0.07);
+}
+
+.eventImageContainer {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Высота изображения остается прежней */
+    overflow: hidden; 
+    border-radius: 18px;
+    margin: 1px; 
+}
+
+.eventImageContainer > span,
+.eventImageContainer > span > img {
+    border-radius: inherit;
+}
+
+.imageOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+    border-radius: inherit;
+}
+
+.eventNameOnImage {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    z-index: 2;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+
+.eventBadge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+.eventBadgeOnline {
+    background-color: rgba(74, 144, 226, 0.8);
+}
+.eventBadgeOffline {
+    background-color: rgba(20, 20, 20, 0.7);
+}
+.eventBadgeHybrid {
+    background-color: rgba(126, 211, 33, 0.8);
+    font-size: 10px;
+    padding: 6px 8px;
+}
+
+.eventInfo {
+    padding: 15px 20px 20px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.eventDatetime {
+    font-size: 14px;  /* Увеличиваем размер шрифта для даты и времени */
+    color: #2d3035;   /* Еще немного темнее для лучшей читаемости */
+    margin-bottom: 12px; /* Слегка увеличим отступ */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    font-weight: 700; /* Делаем еще жирнее (bold) */
+}
+
+.eventDescription {
+    font-size: 14px;
+    line-height: 1.6; /* Увеличим немного интерлиньяж для лучшей читаемости */
+    color: #42474e;
+    margin-bottom: 18px; /* Увеличим отступ */
+    /* Увеличиваем максимальную высоту описания.
+       Предыдущее значение было calc(1.55em * 7).
+       Добавили 50px к карточке. 50px / (14px * 1.6) = ~2.2 строки.
+       Итого примерно 7 + 2 = 9 строк.
+    */
+    max-height: calc(1.6em * 5); /* Ограничение примерно на 9 строк */
+    overflow: hidden;
+    position: relative;
+}
+.eventDescription::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1.6em; /* Подстраиваем под новый line-height */
+    background: linear-gradient(to bottom, rgba(240, 242, 245, 0), rgba(240, 242, 245, 1) 90%); 
+    pointer-events: none;
+}
+
+.eventTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 10px;
+    flex-shrink: 0;
+}
+
+.tag {
+    padding: 5px 14px;
+    border-radius: 18px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.detailsLink {
+    display: inline-block;
+    margin-top: 18px; /* Увеличим отступ */
+    padding: 9px 18px;
+    background-color: #6E48AA;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0;
+}
+.detailsLink:hover {
+    background-color: #5a3a8a;
+}

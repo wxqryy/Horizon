@@ -1,0 +1,239 @@
+.pageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f4f6f8;
+  padding: 20px;
+  box-sizing: border-box;
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.verificationCard {
+  display: flex;
+  flex-direction: column; 
+  background-color: #ffffff;
+  border-radius: 28px; 
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); 
+  overflow: hidden;
+  width: 100%;
+
+  max-width: 1060px; 
+
+}
+
+@media (min-width: 820px) { 
+  .verificationCard {
+    flex-direction: row;
+  }
+}
+
+.iconSection {
+
+  flex-basis: 45%; 
+  background-color: #f0f4f9; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 30px; 
+}
+
+@media (max-width: 819px) { 
+  .iconSection {
+    flex-basis: auto; 
+    border-right: none;
+    border-bottom: 1px solid #e9ebee; 
+    padding: 40px 20px;
+    min-height: 250px; 
+  }
+  .iconSection img {
+
+    width: 100px !important; 
+    height: 100px !important;
+  }
+}
+
+.contentSection {
+  flex-basis: 70%; 
+  padding: 50px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center; 
+}
+
+@media (max-width: 819px) {
+  .contentSection {
+    flex-basis: auto;
+    padding: 40px 25px; 
+  }
+}
+
+.contentSection h2 {
+
+  font-family: 'Unbounded', sans-serif; 
+  font-size: 32px; 
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 16px; 
+}
+
+.instructionText {
+
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px; 
+  color: #52667D; 
+  margin-bottom: 40px; 
+  max-width: 420px; 
+  line-height: 1.65;
+}
+
+.emailHighlight {
+  font-weight: 600; 
+  color: #2c3e50; 
+}
+
+.otpForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.otpInputContainer {
+  display: flex;
+  justify-content: center;
+  gap: 16px; 
+  margin-bottom: 40px; 
+}
+
+.otpInput {
+
+  width: 60px; 
+  height: 70px; 
+  text-align: center;
+  font-size: 28px; 
+  font-weight: 500;
+  border: 1px solid #323538; 
+  border-radius: 14px; 
+  color: #1e293b;
+  background-color: #fdfdfe; 
+  caret-color: #2563eb; 
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.otpInput:focus {
+  border-color: #2563eb; 
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2); 
+  outline: none;
+}
+
+.otpInput::-webkit-outer-spin-button,
+.otpInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.otpInput[type=number] {
+  -moz-appearance: textfield;
+}
+
+.submitButton {
+  width: 100%;
+  max-width: 400px; 
+  padding: 16px; 
+  background-color: #1e293b;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 17px; 
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  margin-bottom: 28px; 
+}
+
+.submitButton:hover {
+  background-color: #334155;
+}
+
+.submitButton:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.resendSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 15px; 
+  color: #64748b;
+}
+
+@media (min-width: 450px) { 
+  .resendSection {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.resendInfoText {
+  margin-right: 8px; 
+  margin-bottom: 8px;
+}
+
+@media (min-width: 450px) {
+  .resendInfoText {
+    margin-bottom: 0;
+  }
+}
+
+.resendButton {
+  background-color: transparent;
+  border: none;
+  color: #2563eb; 
+  font-weight: 500; 
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+
+}
+
+.resendButton:hover {
+  color: #1d4ed8; 
+  text-decoration: underline;
+}
+
+.resendButton:disabled {
+  color: #94a3b8;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+.messageText {
+  width: 100%;
+  max-width: 400px;
+  font-size: 15px; 
+  margin-top: -20px; 
+  margin-bottom: 24px;
+  min-height: 1.3em;
+}
+
+.errorText {
+  color: #ef4444;
+}
+
+.successText {
+  color: #22c55e;
+}
+
+.resendMessageFeedback {
+    margin-top: 10px;
+    font-size: 14px; 
+
+}

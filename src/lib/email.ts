@@ -20,9 +20,7 @@ export function generateSecureToken(length = 32): string {
 
 async function sendEmail(to: string, subject: string, htmlContent: string, textContent?: string) {
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
-    console.warn(
-      `SMTP not configured. Email to ${to} with subject "${subject}" not sent. \nHTML: ${htmlContent}`
-    );
+    console.warn(`SMTP not configured. Email to ${to} with subject "${subject}" was not sent.`);
     return { success: false, message: 'SMTP not configured' };
   }
 

@@ -6,19 +6,19 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
     "cookie": "^1.0.2",
     "jsonwebtoken": "^9.0.2",
-    "next": "15.3.2",
-    "nodemailer": "^7.0.3",
+    "next": "16.2.11",
+    "nodemailer": "9.0.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "sharp": "^0.34.2",
+    "sharp": "0.35.3",
     "sqlite": "^5.1.1",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "6.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -30,8 +30,8 @@
     "@types/nodemailer": "^6.4.17",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.3.2",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.2.11",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

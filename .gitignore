@@ -1,0 +1,31 @@
+# Dependencies and builds
+node_modules/
+.next/
+out/
+coverage/
+
+# Environment and local databases
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.db
+*.sqlite
+*.sqlite3
+
+# User-generated files
+public/uploads/avatars/*
+!public/uploads/avatars/.gitkeep
+
+# Logs and tooling
+*.log
+.eslintcache
+*.tsbuildinfo
+.vercel/
+
+# IDE and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
